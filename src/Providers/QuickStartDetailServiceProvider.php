@@ -42,7 +42,11 @@ class QuickStartDetailServiceProvider extends ServiceProvider
     protected function createProviderClosure()
     {
         return function ($app) {
-            return new QuickStartDetail(new Client(), ['apiKey' => $app['config']['guidestar']['detail_api_key']]);
+            return new QuickStartDetail(new Client(), [
+                'apiKey' => $app['config']['guidestar']['detail_api_key'],
+                'username' => $app['config']['guidestar']['username'],
+                'password' => $app['config']['guidestar']['password'],
+            ]);
         };
     }
 }

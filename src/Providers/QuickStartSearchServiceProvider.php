@@ -42,7 +42,11 @@ class QuickStartSearchServiceProvider extends ServiceProvider
     protected function createProviderClosure()
     {
         return function ($app) {
-            return new QuickStartSearch(new Client(), ['apiKey' => $app['config']['guidestar']['search_api_key']]);
+            return new QuickStartSearch(new Client(), [
+                'apiKey' => $app['config']['guidestar']['search_api_key'],
+                'username' => $app['config']['guidestar']['username'],
+                'password' => $app['config']['guidestar']['password'],
+            ]);
         };
     }
 }

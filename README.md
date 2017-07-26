@@ -23,6 +23,9 @@ https://community.guidestar.org/docs/DOC-1867
 After installing the package, register the `KevinEm\GuideStar\Laravel\Providers\QuickStartDetailServiceProvider`
 and `KevinEm\GuideStar\Laravel\Providers\QuickStartSearchServiceProvider` in your `config/app.php` configuration file:
 
+Either supply an apiKey or a username/password in the config. The apiKey takes precedence over
+username/password.
+
 ```php
 'providers' => [
     // Other service providers...
